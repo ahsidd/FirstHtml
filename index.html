@@ -1,3 +1,56 @@
+<!DOCTYPE html>
 <html>
-    Hello Git world!!!!!!
+<head>
+  <title>Tab Example</title>
+  <style>
+    .tab-list {
+      display: flex;
+    }
+
+    .tab-item {
+      padding: 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    .tab-item.active {
+      background-color: #f0f0f0;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="tab-list">
+    <div class="tab-item active" onclick="showTab(0)">C1</div>
+    <div class="tab-item" onclick="showTab(1)">C2</div>
+  </div>
+  <div class="tab-content active">
+    Hello C1
+  </div>
+  <div class="tab-content">
+    Hello C2
+  </div>
+  <script>
+    function showTab(index) {
+      const tabItems = document.querySelectorAll('.tab-item');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabItems.forEach((item,   
+ i) => {
+        item.classList.toggle('active', i === index);
+      });
+
+      tabContents.forEach((content, i) => {
+        content.classList.toggle('active', i === index);
+      });
+    }
+  </script>
+</body>
 </html>
